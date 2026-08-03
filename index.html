@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>BiotaScope — Servicios bioinformáticos de análisis meta-ómico</title>
+<meta name="description" content="Análisis bioinformático de microbiota y datos ómicos: meta-barcoding, perfilado taxonómico y perfilado funcional. Resultados listos para publicar o para tomar decisiones.">
+<meta name="theme-color" content="#003b4d">
+<link rel="canonical" href="https://biotascope.com/">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23003b4d'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%2326c6a2' stroke-width='2'/%3E%3Ccircle cx='13' cy='14' r='2' fill='%2326c6a2'/%3E%3Ccircle cx='19' cy='18' r='2.5' fill='%230277bd'/%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BiotaScope">
+<meta property="og:title" content="BiotaScope — Servicios bioinformáticos de análisis meta-ómico">
+<meta property="og:description" content="Análisis bioinformático de microbiota y datos ómicos: meta-barcoding, perfilado taxonómico y perfilado funcional.">
+<meta property="og:image" content="assets/img/krona-chart.png">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="stylesheet" href="assets/styles.css">
+<script>document.documentElement.classList.add('js');</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "BiotaScope",
+  "description": "Servicios bioinformáticos especializados en análisis meta-ómicos (microbiota, muestras ambientales) y datos ómicos.",
+  "email": "angel@biotascope.com",
+  "url": "https://biotascope.com/",
+  "areaServed": "Worldwide",
+  "availableLanguage": ["es", "en"],
+  "knowsAbout": ["Meta-barcoding", "QIIME2", "PICRUSt2", "Kraken2", "Bracken", "HUMAnN3", "RNA-seq", "ChIP-seq"]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-i18n="skip">Saltar al contenido</a>
+
+<!-- ══════════════════════════ NAV ══════════════════════════ -->
+<header class="site-header" id="siteHeader">
+  <div class="container nav-bar">
+    <a class="brand" href="#top" aria-label="BiotaScope">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <circle cx="16" cy="16" r="15" fill="currentColor" opacity=".12"/>
+        <circle cx="16" cy="16" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        <circle cx="12.5" cy="13.5" r="2" fill="var(--accent)"/>
+        <circle cx="19" cy="18" r="2.6" fill="var(--primary)"/>
+        <circle cx="17.5" cy="12" r="1.2" fill="currentColor"/>
+      </svg>
+      <span class="brand-name">BiotaScope</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+      <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="sr-only" data-i18n="nav.menu">Abrir menú</span>
+    </button>
+
+    <nav class="nav-menu" id="navMenu" aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="#servicios" data-i18n="nav.services">Servicios</a></li>
+        <li><a href="#resultados" data-i18n="nav.results">Resultados</a></li>
+        <li><a href="#sobre" data-i18n="nav.about">Sobre BiotaScope</a></li>
+        <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="lang-switch" id="langSwitch" type="button" title="Español / English">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="16" height="16">
+            <circle cx="12" cy="12" r="9.2" fill="none" stroke="currentColor" stroke-width="1.7"/>
+            <path d="M2.8 12h18.4M12 2.8c2.6 2.6 3.9 6 3.9 9.2s-1.3 6.6-3.9 9.2M12 2.8c-2.6 2.6-3.9 6-3.9 9.2s1.3 6.6 3.9 9.2" fill="none" stroke="currentColor" stroke-width="1.7"/>
+          </svg>
+          <span id="langLabel">EN</span>
+          <span class="sr-only" data-i18n="nav.langHint">Cambiar idioma</span>
+        </button>
+        <a class="btn btn-primary btn-sm" href="#contacto" data-i18n="nav.cta">Solicitar presupuesto</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ══════════════════════════ HERO ══════════════════════════ -->
+  <section class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true">
+      <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <radialGradient id="glowA" cx="20%" cy="25%" r="55%">
+            <stop offset="0%" stop-color="#26c6a2" stop-opacity=".30"/>
+            <stop offset="100%" stop-color="#26c6a2" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="glowB" cx="82%" cy="70%" r="55%">
+            <stop offset="0%" stop-color="#0277bd" stop-opacity=".40"/>
+            <stop offset="100%" stop-color="#0277bd" stop-opacity="0"/>
+          </radialGradient>
+          <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.1" fill="#ffffff" opacity=".16"/>
+          </pattern>
+        </defs>
+        <rect width="1200" height="600" fill="url(#dots)"/>
+        <rect width="1200" height="600" fill="url(#glowA)"/>
+        <rect width="1200" height="600" fill="url(#glowB)"/>
+      </svg>
+    </div>
+
+    <div class="container hero-inner">
+      <p class="eyebrow reveal" data-i18n="hero.eyebrow">Bioinformática meta-ómica</p>
+      <h1 class="hero-title reveal" data-i18n="hero.title">De secuencias crudas a resultados que puedes publicar</h1>
+      <p class="hero-lead reveal" data-i18n="hero.lead">Análisis bioinformático de microbiota, muestras ambientales y datos ómicos para grupos de investigación y empresas.</p>
+      <div class="hero-cta reveal">
+        <a class="btn btn-primary btn-lg" href="#contacto" data-i18n="hero.cta1">Solicitar presupuesto</a>
+        <a class="btn btn-ghost btn-lg" href="#resultados" data-i18n="hero.cta2">Ver resultados</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="techstrip reveal">
+        <span class="techstrip-label" data-i18n="tech.label">Tecnologías</span>
+        <ul class="techstrip-list">
+          <li>QIIME2</li><li>PICRUSt2</li><li>Kraken2</li><li>Bracken</li>
+          <li>HUMAnN3</li><li>RNA-seq</li><li>ChIP-seq</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ SERVICIOS ══════════════════════════ -->
+  <section class="section section-alt" id="servicios">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="eyebrow" data-i18n="services.eyebrow">Servicios</p>
+        <h2 data-i18n="services.title">Qué hacemos</h2>
+        <p class="section-lead" data-i18n="services.lead">Cada análisis se adapta al diseño experimental del proyecto.</p>
+      </header>
+
+      <div class="grid grid-2">
+
+        <article class="card card-service reveal">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 4v16M8 4v16M13 4v16M17 4v16M21 4v16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </div>
+          <h3 data-i18n="svc.meta.title">Meta-barcoding</h3>
+          <p data-i18n="svc.meta.text">Clasificación taxonómica y predicción funcional de comunidades microbianas a partir de secuencias amplificadas de 16S/ITS con QIIME2 y PICRUSt2.</p>
+          <ul class="tags"><li>QIIME2</li><li>PICRUSt2</li><li>16S</li><li>ITS</li></ul>
+        </article>
+
+        <article class="card card-service reveal">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </div>
+          <h3 data-i18n="svc.kraken.title">Análisis taxonómico</h3>
+          <p data-i18n="svc.kraken.text">Identificación taxonómica mediante alineamiento con bases de datos personalizadas utilizando Kraken2 y Bracken.</p>
+          <ul class="tags"><li>Kraken2</li><li>Bracken</li><li>Krona</li><li>Shotgun</li></ul>
+        </article>
+
+        <article class="card card-service reveal">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 20c0-4 4-4 4-8s-4-4-4-8m16 16c0-4-4-4-4-8s4-4 4-8M6.5 8h11M6.5 16h11" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </div>
+          <h3 data-i18n="svc.humann.title">Perfilado funcional</h3>
+          <p data-i18n="svc.humann.text">Perfilado de rutas metabólicas mediante alineamiento funcional y enriquecimiento, útil para caracterizar el potencial funcional de microbiotas complejas.</p>
+          <ul class="tags"><li>HUMAnN3</li><li>MetaCyc</li><li>UniRef</li></ul>
+        </article>
+
+        <article class="card card-service reveal">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 4c0 4 10 4 10 8s-10 4-10 8M7 4h10M7 20h10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </div>
+          <h3 data-i18n="svc.general.title">Bioinformática general</h3>
+          <p data-i18n="svc.general.text">Procesamiento de datos genómicos y transcriptómicos, con herramientas adaptadas a distintos diseños experimentales.</p>
+          <ul class="tags"><li>RNA-seq</li><li>scRNA-seq</li><li>ChIP-seq</li><li>Variant calling</li></ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ RESULTADOS ══════════════════════════ -->
+  <section class="section" id="resultados">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="eyebrow" data-i18n="results.eyebrow">Resultados</p>
+        <h2 data-i18n="results.title">Ejemplos de análisis</h2>
+        <p class="section-lead" data-i18n="results.lead">Pulsa en cualquier figura para verla a tamaño completo.</p>
+      </header>
+
+      <ul class="gallery" id="gallery">
+        <li class="gallery-item reveal">
+          <button class="gallery-btn" type="button" data-full="assets/img/qiime2-taxa-barplot.png" data-caption-key="results.cap1">
+            <picture>
+              <source srcset="assets/img/qiime2-taxa-barplot.webp" type="image/webp">
+              <img src="assets/img/qiime2-taxa-barplot.png" width="1120" height="706" loading="lazy" decoding="async" alt="Gráfico de barras apiladas de composición taxonómica generado con QIIME2">
+            </picture>
+            <span class="gallery-caption" data-i18n="results.cap1">Composición taxonómica · QIIME2</span>
+          </button>
+        </li>
+        <li class="gallery-item reveal">
+          <button class="gallery-btn" type="button" data-full="assets/img/picrust2-functional.png" data-caption-key="results.cap2">
+            <picture>
+              <source srcset="assets/img/picrust2-functional.webp" type="image/webp">
+              <img src="assets/img/picrust2-functional.png" width="756" height="518" loading="lazy" decoding="async" alt="Predicción funcional de la comunidad microbiana obtenida con PICRUSt2">
+            </picture>
+            <span class="gallery-caption" data-i18n="results.cap2">Predicción funcional · PICRUSt2</span>
+          </button>
+        </li>
+        <li class="gallery-item reveal">
+          <button class="gallery-btn" type="button" data-full="assets/img/krona-chart.png" data-caption-key="results.cap3">
+            <picture>
+              <source srcset="assets/img/krona-chart.webp" type="image/webp">
+              <img src="assets/img/krona-chart.png" width="931" height="899" loading="lazy" decoding="async" alt="Gráfico Krona jerárquico de abundancia taxonómica">
+            </picture>
+            <span class="gallery-caption" data-i18n="results.cap3">Jerarquía taxonómica · Krona</span>
+          </button>
+        </li>
+        <li class="gallery-item reveal">
+          <button class="gallery-btn" type="button" data-full="assets/img/volcano-differential.png" data-caption-key="results.cap4">
+            <picture>
+              <source srcset="assets/img/volcano-differential.webp" type="image/webp">
+              <img src="assets/img/volcano-differential.png" width="1600" height="1600" loading="lazy" decoding="async" alt="Volcano plot de abundancia diferencial entre dos grupos de muestras">
+            </picture>
+            <span class="gallery-caption" data-i18n="results.cap4">Abundancia diferencial · Volcano plot</span>
+          </button>
+        </li>
+        <li class="gallery-item reveal">
+          <button class="gallery-btn" type="button" data-full="assets/img/humann3-heatmap.png" data-caption-key="results.cap5">
+            <picture>
+              <source srcset="assets/img/humann3-heatmap.webp" type="image/webp">
+              <img src="assets/img/humann3-heatmap.png" width="1600" height="1920" loading="lazy" decoding="async" alt="Heatmap de rutas metabólicas por muestra generado con HUMAnN3">
+            </picture>
+            <span class="gallery-caption" data-i18n="results.cap5">Rutas metabólicas · Heatmap funcional</span>
+          </button>
+        </li>
+        <li class="gallery-item reveal">
+          <button class="gallery-btn" type="button" data-full="assets/img/humann3-pathways-barplot.png" data-caption-key="results.cap6">
+            <picture>
+              <source srcset="assets/img/humann3-pathways-barplot.webp" type="image/webp">
+              <img src="assets/img/humann3-pathways-barplot.png" width="1600" height="1920" loading="lazy" decoding="async" alt="Gráfico de barras de rutas metabólicas diferenciales">
+            </picture>
+            <span class="gallery-caption" data-i18n="results.cap6">Rutas diferenciales · Gráfico de barras</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ SOBRE ══════════════════════════ -->
+  <section class="section section-dark" id="sobre">
+    <div class="container container-narrow about">
+      <p class="eyebrow reveal" data-i18n="about.eyebrow">Sobre BiotaScope</p>
+      <h2 class="reveal" data-i18n="about.title">Datos de secuenciación convertidos en respuestas</h2>
+      <p class="reveal" data-i18n="about.p1">BiotaScope es un servicio especializado en análisis bioinformático meta-ómico. Trabajamos con grupos de investigación y empresas que necesitan convertir datos de secuenciación en resultados interpretables.</p>
+      <p class="reveal" data-i18n="about.p2">Cada proyecto parte de un plan de análisis acordado de antemano y se entrega con las figuras, las tablas y la documentación necesarias para publicar o para tomar decisiones.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ CONTACTO ══════════════════════════ -->
+  <section class="section" id="contacto">
+    <div class="container container-narrow">
+      <header class="section-head reveal">
+        <p class="eyebrow" data-i18n="contact.eyebrow">Contacto</p>
+        <h2 data-i18n="contact.title">Cuéntanos tu proyecto</h2>
+        <p class="section-lead" data-i18n="contact.lead">Descríbenos el proyecto en un par de frases y te respondemos con una primera valoración.</p>
+      </header>
+
+      <!--
+        FORMULARIO NO CONECTADO.
+        Formspree:  action="https://formspree.io/f/TU_ID"  method="POST"
+        Netlify:    añade  netlify  al <form>
+        Después, borra el bloque marcado al final de initForm() en assets/main.js.
+      -->
+      <form class="form reveal" id="contactForm" action="" method="POST" novalidate>
+        <div class="field">
+          <label for="f-name" data-i18n="form.name">Nombre</label>
+          <input type="text" id="f-name" name="name" required autocomplete="name" aria-describedby="err-name">
+          <p class="field-error" id="err-name" data-i18n="form.err.name">Escribe tu nombre.</p>
+        </div>
+
+        <div class="field">
+          <label for="f-email" data-i18n="form.email">Email</label>
+          <input type="email" id="f-email" name="email" required autocomplete="email" aria-describedby="err-email">
+          <p class="field-error" id="err-email" data-i18n="form.err.email">Escribe un email válido.</p>
+        </div>
+
+        <div class="field">
+          <label for="f-org" data-i18n="form.org">Organización <span class="optional" data-i18n="form.optional">(opcional)</span></label>
+          <input type="text" id="f-org" name="organization" autocomplete="organization">
+        </div>
+
+        <div class="field">
+          <label for="f-service" data-i18n="form.service">Servicio</label>
+          <select id="f-service" name="service" required aria-describedby="err-service">
+            <option value="" data-i18n="form.service.ph">Selecciona una opción…</option>
+            <option value="meta-barcoding" data-i18n="svc.meta.title">Meta-barcoding</option>
+            <option value="taxonomico" data-i18n="svc.kraken.title">Análisis taxonómico</option>
+            <option value="funcional" data-i18n="svc.humann.title">Perfilado funcional</option>
+            <option value="general" data-i18n="svc.general.title">Bioinformática general</option>
+            <option value="otro" data-i18n="form.service.other">Otra consulta</option>
+          </select>
+          <p class="field-error" id="err-service" data-i18n="form.err.service">Elige un servicio.</p>
+        </div>
+
+        <div class="field">
+          <label for="f-message" data-i18n="form.message">Mensaje</label>
+          <textarea id="f-message" name="message" rows="5" required aria-describedby="err-message"></textarea>
+          <p class="field-error" id="err-message" data-i18n="form.err.message">Cuéntanos algo sobre el proyecto.</p>
+        </div>
+
+        <div class="field field-check">
+          <input type="checkbox" id="f-consent" name="consent" required aria-describedby="err-consent">
+          <label for="f-consent" data-i18n="form.consent">Acepto que se use mi email para responder a esta consulta.</label>
+          <p class="field-error" id="err-consent" data-i18n="form.err.consent">Necesitamos tu consentimiento para responderte.</p>
+        </div>
+
+        <button class="btn btn-primary btn-lg btn-block" type="submit" data-i18n="form.submit">Enviar consulta</button>
+
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+
+        <p class="form-alt">
+          <span data-i18n="form.alt">O escríbenos a</span>
+          <a href="mailto:angel@biotascope.com">angel@biotascope.com</a>
+        </p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══════════════════════════ FOOTER ══════════════════════════ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <a class="brand brand-footer" href="#top" aria-label="BiotaScope">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <circle cx="16" cy="16" r="15" fill="currentColor" opacity=".12"/>
+          <circle cx="16" cy="16" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <circle cx="12.5" cy="13.5" r="2" fill="var(--accent)"/>
+          <circle cx="19" cy="18" r="2.6" fill="var(--primary)"/>
+        </svg>
+        <span class="brand-name">BiotaScope</span>
+      </a>
+      <p class="footer-tag" data-i18n="footer.tag">Servicios bioinformáticos especializados en análisis meta-ómicos (microbiota, muestras ambientales) y datos ómicos.</p>
+    </div>
+
+    <nav class="footer-links" aria-label="Pie de página">
+      <a href="#servicios" data-i18n="nav.services">Servicios</a>
+      <a href="#resultados" data-i18n="nav.results">Resultados</a>
+      <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+      <a href="mailto:angel@biotascope.com">angel@biotascope.com</a>
+    </nav>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; 2025 BiotaScope</p>
+  </div>
+</footer>
+
+<!-- ══════════════════════════ LIGHTBOX ══════════════════════════ -->
+<dialog class="lightbox" id="lightbox" aria-label="Visor de imágenes">
+  <button class="lightbox-close" type="button" id="lbClose">
+    <span aria-hidden="true">×</span><span class="sr-only" data-i18n="lb.close">Cerrar</span>
+  </button>
+  <button class="lightbox-nav lightbox-prev" type="button" id="lbPrev">
+    <span aria-hidden="true">‹</span><span class="sr-only" data-i18n="lb.prev">Anterior</span>
+  </button>
+  <button class="lightbox-nav lightbox-next" type="button" id="lbNext">
+    <span aria-hidden="true">›</span><span class="sr-only" data-i18n="lb.next">Siguiente</span>
+  </button>
+  <figure class="lightbox-figure">
+    <!-- Sin atributo src: un src="" haría que el navegador pidiera la propia página. -->
+    <img id="lbImage" alt="">
+    <figcaption id="lbCaption"></figcaption>
+  </figure>
+</dialog>
+
+<script type="module" src="assets/main.js"></script>
+</body>
+</html>
