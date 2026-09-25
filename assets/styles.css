@@ -369,6 +369,12 @@ p  { text-wrap: pretty; }
   overflow: hidden;
   box-shadow: var(--shadow-lg);
 }
+.hero-photo picture,
+.about-photo picture,
+.contact-photo picture {
+  position: absolute;
+  inset: 0;
+}
 .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
 .hero-stat-chip {
   position: absolute; left: -28px; bottom: 36px;
@@ -445,6 +451,7 @@ p  { text-wrap: pretty; }
   align-items: center;
 }
 .about-photo {
+  position: relative;
   border-radius: var(--radius-xl);
   overflow: hidden;
   aspect-ratio: 4 / 3.4;
@@ -474,6 +481,7 @@ p  { text-wrap: pretty; }
 }
 .contact-copy p { margin-bottom: var(--space-6); }
 .contact-photo {
+  position: relative;
   border-radius: var(--radius-cell);
   overflow: hidden;
   width: 78%;
