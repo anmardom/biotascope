@@ -23,10 +23,12 @@ export const strings = {
     'nav.cta': 'Solicitar presupuesto',
 
     'hero.eyebrow': 'Bioinformática meta-ómica',
-    'hero.title': 'De secuencias crudas a resultados que puedes publicar',
+    'hero.title.lead': 'De secuencias crudas a resultados que puedes',
+    'hero.title.accent': 'publicar',
     'hero.lead': 'Análisis bioinformático de microbiota, muestras ambientales y datos ómicos para grupos de investigación y empresas.',
     'hero.cta1': 'Solicitar presupuesto',
     'hero.cta2': 'Ver resultados',
+    'hero.stat': '16S · 1.2M reads · 248 ASV',
 
     'tech.label': 'Tecnologías',
 
@@ -57,9 +59,15 @@ export const strings = {
     'results.cap6': 'Rutas diferenciales · Gráfico de barras',
 
     'about.eyebrow': 'Sobre BiotaScope',
-    'about.title': 'Datos de secuenciación convertidos en respuestas',
+    'about.title.lead': 'Datos de secuenciación convertidos en',
+    'about.title.accent': 'respuestas',
     'about.p1': 'BiotaScope es un servicio especializado en análisis bioinformático meta-ómico. Trabajamos con grupos de investigación y empresas que necesitan convertir datos de secuenciación en resultados interpretables.',
-    'about.p2': 'Cada proyecto parte de un plan de análisis acordado de antemano y se entrega con las figuras, las tablas y la documentación necesarias para publicar o para tomar decisiones.',
+    'about.step1.title': 'Plan acordado',
+    'about.step1.text': 'Definimos contigo el plan de análisis antes de empezar.',
+    'about.step2.title': 'Análisis reproducible',
+    'about.step2.text': 'Pipelines documentados y versionados.',
+    'about.step3.title': 'Entrega publicable',
+    'about.step3.text': 'Figuras, tablas y métodos listos para el manuscrito.',
 
     'contact.eyebrow': 'Contacto',
     'contact.title': 'Cuéntanos tu proyecto',
@@ -109,10 +117,12 @@ export const strings = {
     'nav.cta': 'Request a quote',
 
     'hero.eyebrow': 'Meta-omics bioinformatics',
-    'hero.title': 'From raw sequences to results you can publish',
+    'hero.title.lead': 'From raw sequences to results you can',
+    'hero.title.accent': 'publish',
     'hero.lead': 'Bioinformatics analysis of microbiota, environmental samples and omics data for research groups and companies.',
     'hero.cta1': 'Request a quote',
     'hero.cta2': 'See results',
+    'hero.stat': '16S · 1.2M reads · 248 ASV',
 
     'tech.label': 'Technologies',
 
@@ -143,9 +153,15 @@ export const strings = {
     'results.cap6': 'Differential pathways · Bar chart',
 
     'about.eyebrow': 'About BiotaScope',
-    'about.title': 'Sequencing data turned into answers',
+    'about.title.lead': 'Sequencing data turned into',
+    'about.title.accent': 'answers',
     'about.p1': 'BiotaScope is a service specialised in meta-omics bioinformatics analysis. We work with research groups and companies that need to turn sequencing data into interpretable results.',
-    'about.p2': 'Every project starts from an analysis plan agreed in advance and is delivered with the figures, tables and documentation needed to publish or to make decisions.',
+    'about.step1.title': 'Agreed plan',
+    'about.step1.text': 'We define the analysis plan with you before starting.',
+    'about.step2.title': 'Reproducible analysis',
+    'about.step2.text': 'Documented, versioned pipelines.',
+    'about.step3.title': 'Publishable delivery',
+    'about.step3.text': 'Figures, tables and methods ready for the manuscript.',
 
     'contact.eyebrow': 'Contact',
     'contact.title': 'Tell us about your project',
