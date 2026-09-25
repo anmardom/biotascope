@@ -1,10 +1,11 @@
 # BiotaScope — landing
 
-Landing comercial de BiotaScope. HTML, CSS y JavaScript puros: sin build, sin dependencias, sin `node_modules`. Lo que hay en esta carpeta es exactamente lo que se publica.
+Landing comercial de BiotaScope. HTML, CSS y JavaScript puros, sin build. La única dependencia es `nodemailer`, que usa la función del formulario (`api/`) y que Vercel instala solo.
 
 ```
 landing/
 ├── index.html          # estructura de la página
+├── api/contact.js      # envío del formulario (Vercel → SMTP de IONOS)
 ├── assets/
 │   ├── styles.css      # estilos
 │   ├── i18n.js         # todos los textos (español e inglés)
@@ -33,19 +34,19 @@ Todo el copy está en **`assets/i18n.js`**, no en el HTML. Busca la clave, cambi
 'hero.title': 'De secuencias crudas a resultados que puedes publicar',
 ```
 
-## Conectar el formulario
+## Formulario de contacto
 
-Ahora mismo el formulario valida los campos pero **no envía nada**: al pulsar “Enviar consulta” muestra un aviso pidiendo que escriban a `angel@biotascope.com`.
+El formulario envía a `api/contact.js`, una función serverless de Vercel que manda el mensaje por el SMTP de IONOS (`smtp.ionos.es:465`). El correo llega desde tu propio buzón y con *Reply-To* del visitante, así que basta con pulsar “Responder”.
 
-Para activarlo con [Formspree](https://formspree.io):
+Configura en Vercel → *Settings → Environment Variables* y vuelve a desplegar:
 
-1. En `index.html`, pon tu endpoint en el `action` del formulario:
-   ```html
-   <form class="form" id="contactForm" action="https://formspree.io/f/TU_ID" method="POST" novalidate>
-   ```
-2. En `assets/main.js`, dentro de `initForm()`, borra el bloque de cuatro líneas marcado con comentarios al final del `submit`.
+| Variable    | Valor                                         |
+|-------------|-----------------------------------------------|
+| `SMTP_USER` | buzón de IONOS, p. ej. `angel@biotascope.com` |
+| `SMTP_PASS` | contraseña de ese buzón                       |
+| `MAIL_TO`   | *(opcional)* otro destinatario                |
 
-Con Netlify Forms es lo mismo, pero añadiendo el atributo `netlify` al `<form>` en vez del `action`.
+Si falla, mira los logs de la función en Vercel (*Deployments → Functions*). Para probarlo en local usa `npx vercel dev` (con `npx serve` la función no existe).
 
 ## Publicar
 

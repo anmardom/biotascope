@@ -266,13 +266,14 @@
         <p class="section-lead" data-i18n="contact.lead">Descríbenos el proyecto en un par de frases y te respondemos con una primera valoración.</p>
       </header>
 
-      <!--
-        FORMULARIO NO CONECTADO.
-        Formspree:  action="https://formspree.io/f/TU_ID"  method="POST"
-        Netlify:    añade  netlify  al <form>
-        Después, borra el bloque marcado al final de initForm() en assets/main.js.
-      -->
-      <form class="form reveal" id="contactForm" action="" method="POST" novalidate>
+      <!-- Se envía a api/contact.js (función de Vercel → SMTP de IONOS). -->
+      <form class="form reveal" id="contactForm" action="/api/contact" method="POST" novalidate>
+        <!-- Campo trampa antispam: oculto para personas, los bots lo rellenan. -->
+        <div class="sr-only" aria-hidden="true">
+          <label for="f-website">Website</label>
+          <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
         <div class="field">
           <label for="f-name" data-i18n="form.name">Nombre</label>
           <input type="text" id="f-name" name="name" required autocomplete="name" aria-describedby="err-name">
@@ -286,7 +287,11 @@
         </div>
 
         <div class="field">
-          <label for="f-org" data-i18n="form.org">Organización <span class="optional" data-i18n="form.optional">(opcional)</span></label>
+          <!-- El label no lleva data-i18n: asignar textContent al padre borraría el span hijo. -->
+          <label for="f-org">
+            <span data-i18n="form.org">Organización</span>
+            <span class="optional" data-i18n="form.optional">(opcional)</span>
+          </label>
           <input type="text" id="f-org" name="organization" autocomplete="organization">
         </div>
 
