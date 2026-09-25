@@ -82,7 +82,9 @@ export const strings = {
     'form.err.message': 'Cuéntanos algo sobre el proyecto.',
     'form.err.consent': 'Necesitamos tu consentimiento para responderte.',
     'form.status.invalid': 'Revisa los campos marcados en rojo.',
-    'form.status.pending': 'El formulario todavía no está conectado. Escríbenos a angel@biotascope.com y te respondemos igualmente.',
+    'form.status.sending': 'Enviando…',
+    'form.status.success': '¡Gracias! Hemos recibido tu consulta y te responderemos pronto.',
+    'form.status.error': 'No se ha podido enviar. Inténtalo de nuevo o escríbenos a angel@biotascope.com.',
 
     'footer.tag': 'Servicios bioinformáticos especializados en análisis meta-ómicos (microbiota, muestras ambientales) y datos ómicos.',
 
@@ -166,7 +168,9 @@ export const strings = {
     'form.err.message': 'Please tell us something about the project.',
     'form.err.consent': 'We need your consent in order to reply.',
     'form.status.invalid': 'Please check the fields marked in red.',
-    'form.status.pending': 'This form is not connected yet. Email us at angel@biotascope.com and we will reply just the same.',
+    'form.status.sending': 'Sending…',
+    'form.status.success': 'Thank you! We have received your enquiry and will get back to you soon.',
+    'form.status.error': 'Your message could not be sent. Please try again or email us at angel@biotascope.com.',
 
     'footer.tag': 'Bioinformatics services tailored to meta-omics analyses (microbiota, environmental samples) and omics data.',
 

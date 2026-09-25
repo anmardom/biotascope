@@ -439,6 +439,9 @@ p  { text-wrap: pretty; }
   width: min(92vw, 1100px);
   max-width: none;
   max-height: 92vh;
+  /* El reset `* { margin: 0 }` anula el margin:auto que el navegador da a
+     <dialog>; sin esto el visor se ancla arriba a la izquierda. */
+  margin: auto;
   padding: 0;
   border: none;
   border-radius: var(--r-lg);
@@ -501,6 +504,7 @@ p  { text-wrap: pretty; }
   .nav-menu.is-open { display: flex; }
   .nav-links { flex-direction: column; align-items: stretch; gap: 0; }
   .nav-links a {
+    display: block;            /* inline no llenaría el ancho del separador */
     padding: var(--sp-3) 0;
     border-bottom: 1px solid var(--border);
     font-size: 1rem;
